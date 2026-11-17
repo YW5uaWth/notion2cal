@@ -42,11 +42,11 @@ def query_database(database_id: str) -> list[dict]:
 
     return results
 
-        results.extend(data["results"])
+    results.extend(data["results"])
 
-        if not data.get("has_more"):
-            break
-        payload["start_cursor"] = data["next_cursor"]
+    if not data.get("has_more"):
+       break
+    payload["start_cursor"] = data["next_cursor"]
 
     return results
 
