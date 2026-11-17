@@ -3,7 +3,7 @@
 
 import os
 import sys
-from datetime import datetime, date, timezone
+from datetime import datetime, date, timezone, timedelta
 
 import requests
 from icalendar import Calendar, Event
@@ -39,14 +39,6 @@ def query_database(database_id: str) -> list[dict]:
         if not data.get("has_more"):
             break
         payload["start_cursor"] = data["next_cursor"]
-
-    return results
-
-    results.extend(data["results"])
-
-    if not data.get("has_more"):
-       break
-    payload["start_cursor"] = data["next_cursor"]
 
     return results
 
@@ -104,19 +96,15 @@ def parse_datetime(value: str) -> datetime | date:
 
 def is_in_past(start, end) -> bool:
     """Return True if the event ended before today (should be excluded)."""
-    # Use end date if present, otherwise start date — an ongoing multi-day
-    # event should still appear until its end.
     reference = end if end is not None else start
 
     today = date.today()
     now = datetime.now(timezone.utc)
 
     if isinstance(reference, datetime):
-        # Make naive datetimes timezone-aware (assume UTC) for comparison
         if reference.tzinfo is None:
             reference = reference.replace(tzinfo=timezone.utc)
         return reference < now
-    # Pure date: include events whose date is today or later
     return reference < today
 
 
@@ -160,12 +148,13 @@ def build_calendar(pages: list[dict]) -> Calendar:
         event.add("dtstart", start)
 
         if end:
-            event.add("dtend", end)
+            if isinstance(end, date) and not isinstance(end, datetime):
+                event.add("dtend", end + timedelta(days=1))
+            else:
+                event.add("dtend", end)
         elif isinstance(start, date) and not isinstance(start, datetime):
-            # All-day event without end: single day
             pass
         else:
-            # Timed event without end: use start as end (zero-duration)
             event.add("dtend", start)
 
         if description:
