@@ -12,13 +12,13 @@ NOTION_TOKEN = os.environ.get("NOTION_TOKEN")
 NOTION_DATABASE_ID = os.environ.get("NOTION_DATABASE_ID")
 OUTPUT_FILE = os.environ.get("OUTPUT_FILE", "notion_calendar.ics")
 
-NOTION_API_VERSION = "2022-06-28"
+NOTION_API_VERSION = "2025-09-03"
 NOTION_API_BASE = "https://api.notion.com/v1"
 
 
 def query_database(database_id: str) -> list[dict]:
-    """Query all pages from a Notion database, handling pagination."""
-    url = f"{NOTION_API_BASE}/databases/{database_id}/query"
+    """Query all pages from a Notion data source, handling pagination."""
+    url = f"{NOTION_API_BASE}/data_sources/{database_id}/query"
     headers = {
         "Authorization": f"Bearer {NOTION_TOKEN}",
         "Notion-Version": NOTION_API_VERSION,
@@ -34,6 +34,14 @@ def query_database(database_id: str) -> list[dict]:
             print("Notion API Error:", resp.status_code, resp.text)
         resp.raise_for_status()
         data = resp.json()
+        results.extend(data["results"])
+
+        if not data.get("has_more"):
+            break
+        payload["start_cursor"] = data["next_cursor"]
+
+    return results
+
         results.extend(data["results"])
 
         if not data.get("has_more"):
