@@ -30,6 +30,8 @@ def query_database(database_id: str) -> list[dict]:
 
     while True:
         resp = requests.post(url, headers=headers, json=payload, timeout=30)
+        if not resp.ok:
+            print("Notion API Error:", resp.status_code, resp.text)
         resp.raise_for_status()
         data = resp.json()
         results.extend(data["results"])
