@@ -5,9 +5,9 @@ CALSCALE:GREGORIAN
 X-WR-CALNAME:Notion Calendar
 BEGIN:VEVENT
 SUMMARY:The Seven Works of Mercy (1607)
-DTSTART;VALUE=DATE:20261116
-DTEND;VALUE=DATE:20261122
-DTSTAMP:20261117T042833Z
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261129
+DTSTAMP:20261123T172511Z
 UID:41ad0fff-4163-807c-9f5b-f3a12b08e2e4@notion2cal
 DESCRIPTION:Caravaggio
 URL:https://app.notion.com/p/The-Seven-Works-of-Mercy-1607-41ad0fff4163807
@@ -15,9 +15,9 @@ URL:https://app.notion.com/p/The-Seven-Works-of-Mercy-1607-41ad0fff4163807
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:What You Missed That Day You Were Absent From Fourth Grade
-DTSTART;VALUE=DATE:20261116
-DTEND;VALUE=DATE:20261122
-DTSTAMP:20261117T042833Z
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261129
+DTSTAMP:20261123T172511Z
 UID:41ad0fff-4163-8087-b763-d2ad0d79d9f6@notion2cal
 DESCRIPTION:Brad Aaron Modlin
 URL:https://app.notion.com/p/What-You-Missed-That-Day-You-Were-Absent-From
@@ -25,9 +25,9 @@ URL:https://app.notion.com/p/What-You-Missed-That-Day-You-Were-Absent-From
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:The Capital T Truth
-DTSTART;VALUE=DATE:20261116
-DTEND;VALUE=DATE:20261122
-DTSTAMP:20261117T042833Z
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261129
+DTSTAMP:20261123T172511Z
 UID:41ad0fff-4163-8017-a489-ccf60fc48846@notion2cal
 DESCRIPTION:Wallace's 2005 Kenyon College commencement address: a stark bu
  t hopeful perspective on life's fundamental questions... 
@@ -36,9 +36,9 @@ URL:https://app.notion.com/p/The-Capital-T-Truth-41ad0fff41638017a489ccf60
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Flowers for Algernon
-DTSTART;VALUE=DATE:20261116
-DTEND;VALUE=DATE:20261122
-DTSTAMP:20261117T042833Z
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261129
+DTSTAMP:20261123T172511Z
 UID:41ad0fff-4163-80ca-b0a9-cea650301064@notion2cal
 DESCRIPTION:\nA poignant psychological science-fiction story about Charlie
   Gordon\, a 32-year-old man with an intellectual disability (an IQ of 68) 
@@ -49,9 +49,9 @@ URL:https://app.notion.com/p/Flowers-for-Algernon-41ad0fff416380cab0a9cea6
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:WTF is “the Intersection of Art and Technology”
-DTSTART;VALUE=DATE:20261116
-DTEND;VALUE=DATE:20261122
-DTSTAMP:20261117T042833Z
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261129
+DTSTAMP:20261123T172511Z
 UID:3f8d0fff-4163-8001-834f-c1ed9ee9d16e@notion2cal
 DESCRIPTION:In this video\, I talk about what the "intersection of art and
   technology" actually means and why this label has suddenly become so pres
